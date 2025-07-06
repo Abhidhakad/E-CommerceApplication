@@ -1,0 +1,23 @@
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+
+interface CategoryState {
+    selectedCategory:string;
+}
+
+const initialState:CategoryState = {
+    selectedCategory:"All Categories",
+}
+
+const categorySlice = createSlice({
+    name:"category",
+    initialState,
+    reducers:{
+        setCategory:(state,action:PayloadAction<string>)=>{
+            state.selectedCategory = action.payload;
+        }
+    }
+})
+
+export const { setCategory } = categorySlice.actions;
+export default categorySlice.reducer;
