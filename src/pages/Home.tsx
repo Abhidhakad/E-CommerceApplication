@@ -65,7 +65,7 @@ const Home = () => {
   return (
     <div className="w-full px-4 sm:px-8 md:px-16 py-10 bg-gray-100">
       <div className="flex flex-wrap -mx-4">
-        {filteredProducts.map((p) => (
+        {filteredProducts.map((p:Products) => (
           <Product key={p.id} {...p} />
         ))}
       </div>

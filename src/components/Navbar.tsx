@@ -10,6 +10,7 @@ const Navbar = () => {
    const selectedCategory = useSelector(
     (state: RootState) => state.category.selectedCategory
   );
+  const cartItemLength = useSelector((state:RootState) => state.cart.length);
   return (
     <header className="w-full bg-sky-950 shadow-2xl px-4 sm:px-8 md:px-12 lg:px-20 py-4">
       <nav className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -48,8 +49,9 @@ const Navbar = () => {
             <Link to="/" className="text-md font-medium text-xl hover:text-gray-300 transition">
               Home
             </Link>
-            <Link to="/cart" className="cursor-pointer hover:text-gray-300 transition">
+            <Link to="/cart" className="cursor-pointer hover:text-gray-300 transition relative">
               <CartIcon />
+              {cartItemLength>0 && <span className="bg-green-500 py-0.5 px-1.5 rounded-full text-white text-xs absolute -top-3 left-3 animate-bounce">{cartItemLength}</span>}
             </Link>
           </div>
         </div>
