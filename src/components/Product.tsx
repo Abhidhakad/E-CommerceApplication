@@ -1,6 +1,6 @@
 import type { Products } from "../pages/Home";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, removeItem } from "../redux/Slices/CartSlice";
+import { addItem, removeItem } from "../redux/Slices/cartSlice";
 import type { RootState } from "../redux/store";
 
 const Product = ({
