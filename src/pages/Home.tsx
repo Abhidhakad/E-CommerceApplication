@@ -1,8 +1,8 @@
-import { useEffect, useState,useMemo } from "react";
-import Product from "../components/Product";
-import { useSelector} from "react-redux";
-import type { RootState } from "../redux/store";
-import ProductShimer from "../components/ProductShimer";
+import { useEffect, useState,useMemo } from "react"
+import Product from "../components/Product"
+import { useSelector} from "react-redux"
+import type { RootState } from "../redux/store"
+import ProductShimer from "../components/ProductShimer"
 
 const API_URL = import.meta.env.VITE_API_URL;
 

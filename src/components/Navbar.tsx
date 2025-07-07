@@ -1,9 +1,11 @@
 import logoImg from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { CartIcon } from "../icons/CartIcon";
+import { HomeICon } from "../icons/HomeIcon";
 import { useDispatch,useSelector } from "react-redux";
 import { setCategory } from "../redux/Slices/categorySlice";
 import type { RootState } from "../redux/store";
+
 
 const Navbar = () => {
   const dispatch = useDispatch()
@@ -46,7 +48,8 @@ const Navbar = () => {
 
           {/* Nav Links (Home + Cart) */}
           <div className="flex items-center gap-10 text-white sm:order-3 order-2">
-            <Link to="/" className="text-md font-medium text-xl hover:text-gray-300 transition">
+            <Link to="/" className="text-md font-medium flex  items-center gap-1 text-xl hover:text-gray-300 transition">
+              <HomeICon />
               Home
             </Link>
             <Link to="/cart" className="cursor-pointer hover:text-gray-300 transition relative">
