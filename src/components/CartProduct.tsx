@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { DeleteIcon } from "../icons/DeleteIcon";
 import type { CartItem } from "../redux/Slices/cartSlice";
 import { removeItem } from "../redux/Slices/cartSlice";
+import { toast } from "react-toastify";
 
 const CartProduct = ({
   id,
@@ -36,7 +37,10 @@ const CartProduct = ({
           </p>
 
           <button
-            onClick={() => dispatch(removeItem(id))}
+            onClick={() => {
+              dispatch(removeItem(id));
+              toast.error("Item removed from cart!",{position:"top-center"});
+            }}
             className="text-red-500 hover:text-red-700 transition cursor-pointer lg:pr-10 md:pr-0 pr-12"
           >
             <DeleteIcon />

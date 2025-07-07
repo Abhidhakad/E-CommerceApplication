@@ -2,6 +2,7 @@ import type { Products } from "../pages/Home";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, removeItem } from "../redux/Slices/cartSlice";
 import type { RootState } from "../redux/store";
+import { toast } from "react-toastify";
 
 const Product = ({
     id,
@@ -19,9 +20,11 @@ const Product = ({
     const handleClick = () => {
         if (isInCart) {
             dispatch(removeItem(id));
+            toast.error("Item removed from cart!",{position:"top-center"});
         } else {
             const product = { id, title, description, image, price, quantity: 1 };
             dispatch(addItem(product));
+            toast.success("Item added to cart!",{position:"top-center"});
         }
     }
     return (
