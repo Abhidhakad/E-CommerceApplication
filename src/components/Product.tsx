@@ -20,11 +20,11 @@ const Product = ({
     const handleClick = () => {
         if (isInCart) {
             dispatch(removeItem(id));
-            toast.error("Item removed from cart!",{position:"top-center"});
+            toast.error("Item removed from cart!",{position:"top-center",hideProgressBar:true});
         } else {
             const product = { id, title, description, image, price, quantity: 1 };
             dispatch(addItem(product));
-            toast.success("Item added to cart!",{position:"top-center"});
+            toast.success("Item added to cart!",{position:"top-center",hideProgressBar:true});
         }
     }
     return (

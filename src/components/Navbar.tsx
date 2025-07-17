@@ -17,7 +17,7 @@ const Navbar = () => {
     <header className="w-full bg-sky-950 shadow-2xl px-4 sm:px-8 md:px-12 lg:px-20 py-4">
       <nav className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
-        {/* Top Row (Logo + Links) */}
+        
         <div className="flex items-center flex-wrap justify-between w-full">
           {/* Logo */}
           <Link to="/" className="transform scale-125">

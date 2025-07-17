@@ -39,7 +39,7 @@ const CartProduct = ({
           <button
             onClick={() => {
               dispatch(removeItem(id));
-              toast.error("Item removed from cart!",{position:"top-center"});
+              toast.error("Item removed from cart!",{position:"top-center",hideProgressBar:true});
             }}
             className="text-red-500 hover:text-red-700 transition cursor-pointer lg:pr-10 md:pr-0 pr-12"
           >
